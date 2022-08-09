@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.63.0'
+project:
+    name: MFG-PWC
+    package:
+        name: MFG-PWC
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/MFG-PWC/tests
+            options:
+                outputdir: robot/MFG-PWC/results
+
+    robot_testdoc:
+        options:
+            path: robot/MFG-PWC/tests
+            output: robot/MFG-PWC/doc/MFG-PWC_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
